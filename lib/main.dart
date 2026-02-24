@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0XFF00A884)),
-        useMaterial3: true,
+        useMaterial3: false,
       ),
       home: SplashScreen(),
       // initialRoute: "/",

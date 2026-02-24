@@ -1,4 +1,4 @@
-import 'package:clone/login/screen/mainscreen.dart';
+import 'package:clone/login/screen/homescreen.dart';
 import 'package:clone/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
@@ -49,19 +49,20 @@ class _ThirdState extends State<Third> {
               onTap: () {
                 _openBottom(context);
               },
-              child:_pickedimage == null?
-                   CircleAvatar(
+              child: _pickedimage == null
+                  ? CircleAvatar(
                       radius: 80,
                       backgroundColor: Color(0XFFD9D9D9),
                       child: Image.asset(
                         "assets/camera.png",
                         height: 60,
-                  fit: BoxFit.cover,
-                ),
-              ):CircleAvatar(
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                  : CircleAvatar(
                       radius: 80,
                       backgroundImage: FileImage(_pickedimage!),
-                    ),  
+                    ),
             ),
             SizedBox(height: 20),
             Row(
@@ -99,7 +100,7 @@ class _ThirdState extends State<Third> {
         callback: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => MainScreen()),
+            MaterialPageRoute(builder: (context) => HomeScreen()),
           );
         },
       ),

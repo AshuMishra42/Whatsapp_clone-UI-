@@ -1,3 +1,4 @@
+import 'package:clone/login/screen/contactscreen.dart';
 import 'package:clone/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +6,41 @@ class ChatScreen extends StatelessWidget {
   //  const ChatScreen({super.key});
 
   var arrCount = [
+    {
+      "images": "assets/krishna.png",
+      "name": "Ankush Kumar Mishra",
+      "lastmsg": "Hey, how are you?",
+      "time": "12:30 PM",
+      "msg": "8",
+    },
+    {
+      "images": "assets/krishna.png",
+      "name": "Rishav Kumar",
+      "lastmsg": "Hey, how are you?",
+      "time": "11:30 PM",
+      "msg": "8",
+    },
+    {
+      "images": "assets/krishna.png",
+      "name": "Saurabh Sarkar",
+      "lastmsg": "Hey, how are you?",
+      "time": "10:30 PM",
+      "msg": "8",
+    },
+    {
+      "images": "assets/krishna.png",
+      "name": "Anshul Kumar",
+      "lastmsg": "Hey, how are you?",
+      "time": "10:30 PM",
+      "msg": "8",
+    },
+    {
+      "images": "assets/krishna.png",
+      "name": "Vishal Kumar",
+      "lastmsg": "Hey, how are you?",
+      "time": "6:30 PM",
+      "msg": "8",
+    },
     {
       "images": "assets/krishna.png",
       "name": "Ankush Kumar Mishra",
@@ -53,14 +89,15 @@ class ChatScreen extends StatelessWidget {
                 return ListTile(
                   leading: CircleAvatar(
                     radius: 40,
-                    backgroundImage: NetworkImage(
+                    backgroundImage: AssetImage(
                       arrCount[index]['images'].toString(),
                     ),
                   ),
 
                   title: UIHelper.CustomText(
                     text: arrCount[index]['name'].toString(),
-                    height: 14, fontWeight: FontWeight.bold
+                    height: 14,
+                    fontWeight: FontWeight.bold,
                   ),
 
                   subtitle: UIHelper.CustomText(
@@ -97,11 +134,19 @@ class ChatScreen extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: CircleAvatar(
-        radius: 30,
-        backgroundColor: Color(0XFF008665),
-        child: Image.asset("assets/Vector.png"),
+      floatingActionButton: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Contactscreen()),
+          );
+        },
+        child: CircleAvatar(
+          radius: 30,
+          backgroundColor: Color(0XFF008665),
+          child: Image.asset("assets/Vector.png"),
+        ),
       ),
     );
   }
-}  
+}

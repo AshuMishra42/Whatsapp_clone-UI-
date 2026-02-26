@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           bottom: TabBar(
             tabs: [
               Tab(child: Image.asset("assets/camera.png", height: 25)),
@@ -50,21 +51,22 @@ class HomeScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
           actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 20),
-              child: IconButton(
-                onPressed: () {},
-                icon: Image.asset("assets/Search.png", height: 25),
-              ),
+            IconButton(
+              onPressed: () {},
+              icon: Image.asset("assets/Search.png", height: 25),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.more_vert, color: Colors.white),
             ),
           ],
         ),
         body: TabBarView(
           children: [
-            ChatScreen(),
-            Callscreen(),
             CameraScreen(),
+            ChatScreen(),
             Statusscreen(),
+            Callscreen(),
           ],
         ),
       ),
